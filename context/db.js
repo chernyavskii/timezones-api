@@ -55,7 +55,7 @@ module.exports = (Sequelize, config) =>
 
     Team.belongsTo(User);
     User.hasMany(Team);
-
+//
     return {
         user      : User,
         team      : Team,
