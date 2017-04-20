@@ -24,6 +24,10 @@ module.exports = (Sequelize, config) =>
         {
             host: config.production.host,
             dialect: 'postgres',
+            dialectOptions: {
+                ssl: true
+            },
+            protocol: 'postgres',
             logging: false,
             define:
                 {
