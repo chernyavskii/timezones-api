@@ -5,7 +5,7 @@ module.exports = (Sequelize, config) =>
         {
             host: config.db.host,
             dialect: 'mysql',
-            logging: false,
+            logging: true,
             define:
                 {
                     timestamps: true,
@@ -24,11 +24,7 @@ module.exports = (Sequelize, config) =>
         {
             host: config.production.host,
             dialect: 'postgres',
-            dialectOptions: {
-                ssl: true
-            },
-            protocol: 'postgres',
-            logging: false,
+            logging: true,
             define:
                 {
                     timestamps: true,
@@ -54,8 +50,8 @@ module.exports = (Sequelize, config) =>
         sequelize = new Sequelize(config.db.name, config.db.user, config.db.password, options);
     }
 
-    const Team = require('../models/team')(Sequelize, sequelize);
     const User = require('../models/user')(Sequelize, sequelize);
+    const Team = require('../models/team')(Sequelize, sequelize);
 
     Team.belongsTo(User);
     User.hasMany(Team);
