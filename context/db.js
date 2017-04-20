@@ -50,8 +50,8 @@ module.exports = (Sequelize, config) =>
         sequelize = new Sequelize(config.db.name, config.db.user, config.db.password, options);
     }
 
-    const User = require('../models/user')(Sequelize, sequelize);
-    const Team = require('../models/team')(Sequelize, sequelize);
+    const User = require('../models/User')(Sequelize, sequelize);
+    const Team = require('../models/Team')(Sequelize, sequelize);
 
     Team.belongsTo(User);
     User.hasMany(Team);
