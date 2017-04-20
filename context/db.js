@@ -5,7 +5,7 @@ module.exports = (Sequelize, config) =>
         {
             host: config.db.host,
             dialect: 'mysql',
-            logging: true,
+            logging: false,
             define:
                 {
                     timestamps: true,
@@ -24,7 +24,7 @@ module.exports = (Sequelize, config) =>
         {
             host: config.production.host,
             dialect: 'postgres',
-            logging: true,
+            logging: false,
             define:
                 {
                     timestamps: true,
