@@ -23,7 +23,7 @@ module.exports = (Sequelize, config) =>
     const options_pg =
         {
             host: config.production.host,
-            dialect: 'pg',
+            dialect: 'postgres',
             logging: false,
             define:
                 {
